@@ -1,0 +1,206 @@
+<div class="form-container">
+  <!-- Form -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="form-row">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" placeholder="New Data" />
+      <small *ngIf="form.get('name').invalid && form.get('name').touched" class="error-message">
+        Name is required.
+      </small>
+    </div>
+
+    <!-- Password -->
+    <div class="flex">
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" />
+        <small *ngIf="form.get('password').invalid && form.get('password').touched" class="error-message">
+          Password is required and must be at least 8 characters long.
+        </small>
+      </div>
+
+      <!-- Reenter Password -->
+      <div class="form-row">
+        <label for="reenterPassword">Reenter Password</label>
+        <input id="reenterPassword" formControlName="reenterPassword" type="password" />
+        <small *ngIf="form.get('reenterPassword').invalid && form.get('reenterPassword').touched" class="error-message">
+          Please reenter your password.
+        </small>
+        <small *ngIf="form.hasError('passwordMismatch')" class="error-message">
+          Passwords do not match.
+        </small>
+      </div>
+    </div>
+
+    <!-- Password Exp/Date -->
+    <div class="ped">
+      <div class="form-row">
+        <label for="passwordExp">Password Exp/Date:</label>
+        <input id="passwordExp" formControlName="passwordExp" type="date" />
+        <small *ngIf="form.get('passwordExp').invalid && form.get('passwordExp').touched" class="error-message">
+          Password expiration date is required.
+        </small>
+      </div>
+
+      <!-- Checkbox Group -->
+      <div class="checkbox-group">
+        <label><input formControlName="locked" type="checkbox" /> Locked</label>
+        <label><input formControlName="systemAltId" type="checkbox" /> System Alt. ID</label>
+      </div>
+    </div>
+
+    <!-- EOD Inventory and Verify -->
+    <div class="form-row">
+      <div class="Eod">
+        <label>
+          <span>EOD Inventory</span>
+          <input formControlName="eodInventory" type="checkbox" />
+        </label>
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input formControlName="eodVerify" type="checkbox" />
+          <span>EOD Inv Verify Required</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Group -->
+    <div class="form-row">
+      <label for="group">Group</label>
+      <select id="group" formControlName="group" multiple>
+        <option value="2005grp">2005grp</option>
+        <option value="22">22</option>
+        <option value="27">27</option>
+        <option value="29">29</option>
+      </select>
+    </div>
+
+    <!-- Supervisor Groups -->
+    <div class="form-row">
+      <label>Supervisor Groups</label>
+      <div class="checkbox-grid">
+        <div class="checkbox-group">
+          <label><input formControlName="creditDateChange" type="checkbox" /> Credit Date Change</label>
+        </div>
+        <div class="checkbox-group"> 
+          <label><input formControlName="invAdjustment" type="checkbox" />Inv Adjustment</label>
+        </div>
+        <div class="checkbox-group">
+          <label><input formControlName="fedBuySell" type="checkbox" /> Fed Buy / Fed Sell / Transfer</label>
+        </div>
+        <div class="recount">
+          <label><input formControlName="recount" type="checkbox" />Recount</label>
+        </div>
+        <div class="checkbox-group">
+          <label><input formControlName="sysAltSupervisor" type="checkbox" /> Sys. AltSupervisor</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventory Group and Title for Validation -->
+    <div class="flex">
+      <div class="form-row">
+        <label for="inventoryGroup">Inventory Group</label>
+        <select id="inventoryGroup" formControlName="inventoryGroup">
+          <option value="None">None</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="titleForvalidation">Title for Validation</label>
+        <input id="titleForvalidation" formControlName="titleForvalidation" type="text" />
+        <small *ngIf="form.get('titleForvalidation').invalid && form.get('titleForvalidation').touched" class="error-message">
+          Title for validation is required.
+        </small>
+      </div>
+    </div>
+
+    <!-- Site -->
+    <div class="form-row">
+      <label for="site">Site</label>
+      <input id="site" formControlName="site" type="text" />
+      <small *ngIf="form.get('site').invalid && form.get('site').touched" class="error-message">
+        Site is required.
+      </small>
+    </div>
+
+    <!-- Auto Selling / Buying and G/L ID -->
+    <div class="flex">
+      <div class="form-row">
+        <label for="autoSellingBuying">Auto Selling / Buying</label>
+        <input id="autoSellingBuying" formControlName="autoSellingBuying" type="checkbox" />
+      </div>
+      <div class="form-row">
+        <label for="glId">G/L ID</label>
+        <input id="glId" formControlName="glId" type="text" />
+        <small *ngIf="form.get('glId').invalid && form.get('glId').touched" class="error-message">
+          G/L ID is required.
+        </small>
+      </div>
+    </div>
+
+    <!-- Over/Short Limit and Employee ID -->
+    <div class="flex">
+      <div class="form-row">
+        <label for="overShortLimit">Over/Short Limit</label>
+        <input id="overShortLimit" formControlName="overShortLimit" type="number" />
+        <small *ngIf="form.get('overShortLimit').invalid && form.get('overShortLimit').touched" class="error-message">
+          Over/Short Limit is required and must be a positive number.
+        </small>
+      </div>
+      <div class="form-row">
+        <label for="employeeId">Employee ID</label>
+        <input id="employeeId" formControlName="employeeId" type="text" />
+        <small *ngIf="form.get('employeeId').invalid && form.get('employeeId').touched" class="error-message">
+          Employee ID is required.
+        </small>
+      </div>
+    </div>
+
+    <!-- Active Directory Name -->
+    <div class="form-row">
+      <label for="activeDirectoryname">Active Directory Name</label>
+      <input id="activeDirectoryname" formControlName="activeDirectoryname" type="text" />
+      <small *ngIf="form.get('activeDirectoryname').invalid && form.get('activeDirectoryname').touched" class="error-message">
+        Active Directory Name is required.
+      </small>
+    </div>
+
+    <!-- Alt.Glory ID -->
+    <div class="form-row">
+      <label for="group">Alt.Glory ID</label>
+      <select id="group" formControlName="group" multiple>
+        <option value="29697">29697</option>
+        <option value="29698">29698</option>
+        <option value="29699">29699</option>
+        <option value="29700">29700</option>
+      </select>
+    </div>
+
+    <!-- Location Name and Address -->
+    <div class="flex">
+      <div class="form-row">
+        <label for="locationName">Location Name</label>
+        <input id="locationName" formControlName="locationName" type="text" />
+        <small *ngIf="form.get('locationName').invalid && form.get('locationName').touched" class="error-message">
+          Location Name is required.
+        </small>
+      </div>
+      <div class="form-row">
+        <label for="locationAddress">Location Address</label>
+        <input id="locationAddress" formControlName="locationAddress" type="text" />
+        <small *ngIf="form.get('locationAddress').invalid && form.get('locationAddress').touched" class="error-message">
+          Location Address is required.
+        </small>
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button type="reset">Cancel</button>
+      <button type="reset">Reset</button>
+      <button type="submit">Add</button>
+    </div>
+  </form>
+</div>

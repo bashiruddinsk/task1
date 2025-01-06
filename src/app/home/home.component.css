@@ -1,0 +1,113 @@
+/* Container */
+.form-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Top Rows */
+.top-rows {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.top-rows .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.top-rows .row label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.top-rows .row span {
+  color: #007bff;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #007bff;
+  margin-bottom: 20px;
+}
+
+.tabs a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid white;
+  border-bottom: white;
+  margin-right: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tabs a:hover {
+  background-color: white;
+}
+
+.tabs a.active {
+  background-color: white;
+  color: #007bff;
+  border-top-color: #007bff;
+  border-right-color: #007bff;
+}
+
+/* Form Rows */
+.form-row {
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Checkbox Group */
+.checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Form Actions */
+.form-actions {
+  text-align: right;
+}
+
+.form-actions button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-actions button[type="reset"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}

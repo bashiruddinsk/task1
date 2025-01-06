@@ -1,0 +1,30 @@
+
+<div class="form-container">
+  <!-- Top Rows -->
+  <div class="top-rows">
+
+    <div class="row">
+      <label for="site1">Site</label>
+      <input id="site1" formControlName="site1" type="text" />
+    </div>
+    <div class="row">
+      <label for="gloryId">Glory ID</label>
+      <input id="gloryId" formControlName="gloryId" type="text" />
+    </div>
+    
+    <div class="row">
+      <label for="cloneFrom">Clone From</label>
+      <input id="cloneFrom" formControlName="cloneFrom" type="text" />
+    </div>
+  
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <a routerLink="/home/basic" routerLinkActive="active" skipLocationChange="true">Basic</a>
+    <a routerLink="/home/processing" routerLinkActive="active" skipLocationChange="true">Processing</a>
+    <a routerLink="/home/selling-to" routerLinkActive="active" skipLocationChange="true">Selling To</a>
+    <a routerLink="/home/buying-from" routerLinkActive="active" skipLocationChange="true">Buying From</a>
+    <a routerLink="/home/system-alt-id" routerLinkActive="active" skipLocationChange="true">System Alt.ID</a>
+  </div>
+<router-outlet></router-outlet>
